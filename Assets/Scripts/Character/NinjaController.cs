@@ -70,6 +70,11 @@ public class NinjaController : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         }
+        //exit app when player press enter
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Application.Quit();
+        }
     }
 
     public void ChangeState(INinjaStates newState)
