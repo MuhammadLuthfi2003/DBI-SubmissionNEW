@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
         Move();
     }
 
-    void Die()
+    public void Die()
     {
         anim.SetTrigger("die"); // Trigger the death animation
         StartCoroutine(DeleteEnemy()); 

@@ -32,7 +32,6 @@ public class DieState : INinjaStates
         if (Input.GetKeyDown(KeyCode.R))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-            Debug.Log("Reloading Scene..."); // Log message for debugging
         }
     }
 }

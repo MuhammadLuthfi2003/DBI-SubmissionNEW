@@ -12,6 +12,16 @@ public class AttackState : INinjaStates
     public void OnEnter(NinjaController ninjaController)
     {
         ninjaController.anim.SetTrigger("attack"); // Trigger attack animation
+
+        if (ninjaController.detectedEnemy != null)
+        {
+            // If an enemy is detected, deal damage to the enemy
+            ninjaController.detectedEnemy.health--;
+            if (ninjaController.detectedEnemy.health <= 0)
+            {
+                ninjaController.detectedEnemy.Die(); // Call the Die method on the enemy
+            }
+        }
     }
 
     public void OnExit(NinjaController ninjaController)

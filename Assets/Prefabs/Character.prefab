@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3066437939075524115}
   - component: {fileID: 2594532928460437845}
+  - component: {fileID: 1609275795988815550}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -61,7 +62,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.46932256, y: -0.02995801}
@@ -77,6 +78,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6176634, y: 4.3351808}
   m_EdgeRadius: 0
+--- !u!114 &1609275795988815550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252167084341404771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b66f18ed4cd164e8d0ef04d78548d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyController: {fileID: 0}
 --- !u!1 &7509248253654774813
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +262,10 @@ MonoBehaviour:
   jumpForce: 5
   health: 3
   isFacingLeft: 0
+  rightAttackCollider: {fileID: 2594532928460437845}
+  leftAttackCollider: {fileID: 7166494769710681449}
   reloadText: {fileID: 0}
+  detectedEnemy: {fileID: 0}
 --- !u!95 &2896106132513443751
 Animator:
   serializedVersion: 5
@@ -280,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3017046385782893010}
   - component: {fileID: 7166494769710681449}
+  - component: {fileID: 694074525369756733}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -331,7 +349,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.46932256, y: -0.02995801}
@@ -347,3 +365,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6176634, y: 4.3351808}
   m_EdgeRadius: 0
+--- !u!114 &694074525369756733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8475530420915921632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b66f18ed4cd164e8d0ef04d78548d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyController: {fileID: 0}

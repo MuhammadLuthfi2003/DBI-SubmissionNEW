@@ -37,8 +37,15 @@ public class NinjaController : MonoBehaviour
     public int health = 3;
     public bool isFacingLeft = false;
 
+    [Header("Attack Collider Settings")]
+    public Collider2D rightAttackCollider;
+    public Collider2D leftAttackCollider;
+
     [Header("UI Settings")]
     public TMPro.TextMeshProUGUI reloadText;
+
+    // detected enemy
+    [HideInInspector] public EnemyController detectedEnemy;
 
     private void Start()
     {
@@ -54,6 +61,8 @@ public class NinjaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetDetector();
+
         currentState.OnUpdate(this);
 
         //reload scene when player press R
@@ -94,6 +103,20 @@ public class NinjaController : MonoBehaviour
             rb.AddForce(knockbackDirection * 5f, ForceMode2D.Impulse); // Apply knockback force
 
             currentState.OnHurt(this, enemy); 
+        }
+    }
+
+    void SetDetector()
+    {
+        if (isFacingLeft)
+        {
+            rightAttackCollider.enabled = false; // Disable right attack collider
+            leftAttackCollider.enabled = true; // Enable left attack collider
+        }
+        else
+        {
+            rightAttackCollider.enabled = true; // Enable right attack collider
+            leftAttackCollider.enabled = false; // Disable left attack collider
         }
     }
 }
